@@ -37,7 +37,8 @@ alias update='yaourt -Syua'
 alias clean='pacman -Rsn $(pacman -Qtdq)'
 alias untar='tar -xvf'
 alias open='thunar'
-alias uninstall 'Yaourt -Rns'
+alias gpom='git push origin master'
+
 # The Fuck package
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias FUCK)"

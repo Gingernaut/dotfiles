@@ -151,5 +151,5 @@ alt + g
 
 #lock the screen
 alt + shift + x
-    ~/lock.sh
+    ~/dotfiles/misc/lock/lock.sh
 
