@@ -26,4 +26,5 @@ bspc rule -a Screenkey manage=off
 xrdb ~/.Xresources &
 feh --bg-scale ~/Pictures/Wallpaper/wallpaper.jpg &
 yabar &
-docky
+docky &
+compiz ccp
