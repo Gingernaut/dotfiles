@@ -153,3 +153,9 @@ alt + g
 alt + shift + x
     ~/dotfiles/misc/lock/lock.sh
 
+#fullscreen toggle
+alt + f
+    f11
+
+
+

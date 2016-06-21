@@ -39,6 +39,14 @@ alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
 
+
+alias bingvm="root@107.170.4.130"
+
+
+
+
+
 # The Fuck package
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias FUCK)"
+source /usr/share/doc/pkgfile/command-not-found.zsh
