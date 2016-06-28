@@ -33,15 +33,14 @@ alias pacman='sudo pacman'
 alias wifi-menu='sudo rfkill unblock all; sudo ip link set wlp6s0 up; sudo wifi-menu'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
-alias update='yaourt -Syua'
+alias update='yaourt -Syua --noconfirm'
 alias clean='pacman -Rsn $(pacman -Qtdq)'
 alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
-
-
-alias bingvm="root@107.170.4.130"
-
+alias subl='subl3'
+alias bingvm="ssh root@107.170.4.130"
+alias pingg="ping http://www.google.com"
 
 
 

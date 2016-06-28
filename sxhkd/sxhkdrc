@@ -14,6 +14,9 @@ alt + d
 alt + r
 	pkill -USR1 -x sxhkd
 
+alt + shift + m
+    docky
+
 #
 # bspwm hotkeys
 #
@@ -119,11 +122,11 @@ super + ctrl + shift + space
 
 # expand the tiled space in the given direction
 super + alt + {h,j,k,l}
-	bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
+	bspc node {@west -r -15,@south -r +15,@north -r -15,@east -r +15}
 
 # contract the tiled space in the given direction
 super + alt + shift + {h,j,k,l}
-	bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
+	bspc node {@east -r -10,@north -r +15,@south -r -15,@west -r +15}
 
 # move a floating window
 super + {Left,Down,Up,Right}
@@ -138,8 +141,12 @@ super + {Left,Down,Up,Right}
 	bspc pointer -g focus
 
 # start move/resize
-super + button{1-3}
-	; bspc pointer -g {move,resize_side,resize_corner}
+alt + button1
+	; bspc pointer -g move
+
+alt + shift +button1
+    ; bspc pointer -g resize_corner
+
 
 # end move/resize
 super + @button{1-3}
@@ -152,10 +159,3 @@ alt + g
 #lock the screen
 alt + shift + x
     ~/dotfiles/misc/lock/lock.sh
-
-#fullscreen toggle
-alt + f
-    f11
-
-
-

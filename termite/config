@@ -38,7 +38,7 @@ foreground_bold = #ffffff
 background = #424244
 
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.8)
+background = rgba(63, 63, 63, 1)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f
@@ -62,17 +62,6 @@ color14 = #93e0e3
 color15 = #ffffff
 
 [hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 5.0
-
-# vim: ft=dosini cms=#%s
 
 
 
