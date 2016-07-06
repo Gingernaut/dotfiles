@@ -39,11 +39,10 @@ alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
 alias subl='subl3'
-alias bingvm="ssh root@107.170.4.130"
 alias pingg="ping http://www.google.com"
-
-
-
+alias rickroll='nc rya.nc 1987'
+alias google='google-chrome-stable'
+alias 'gnuke'="git reset --hard && git clean -fdx"
 
 # The Fuck package
 eval "$(thefuck --alias)"
