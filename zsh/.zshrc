@@ -44,6 +44,15 @@ alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 alias 'gnuke'="git reset --hard && git clean -fdx"
 
+
+
+
+
+PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
+
+
+
+
 # The Fuck package
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias FUCK)"
