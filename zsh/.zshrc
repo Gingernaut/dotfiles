@@ -27,14 +27,14 @@ alias vrc='vim ~/.zshrc'
 alias top='htop'
 alias ifconfig='ip addr'
 alias polyfy='~/dotfiles/misc/polyfy.sh'
-alias lock='~/lock.sh'
+alias lock='~/dotfiles/misc/lock/lock.sh'
 alias listi='yaourt -Qqet' ## lists all user installed packages
 alias pacman='sudo pacman'
 alias wifi-menu='sudo rfkill unblock all; sudo ip link set wlp6s0 up; sudo wifi-menu'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
 alias update='yaourt -Syua --noconfirm'
-alias clean='pacman -Rsn $(pacman -Qtdq)'
+alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old'
 alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
@@ -44,7 +44,7 @@ alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 
 alias gnuke="git reset --hard && git clean -fdx"
-alias sp='~/dotfiles/misc/sp.sh'
+alias sp='~/dotfiles/spotify/sp.sh'
 
 
 

@@ -8,7 +8,7 @@ alt + Return
 
 # program launcher
 alt + d
-    rofi -show run -font "Inconsolata 32"
+    rofi -show run
 
 # make sxhkd reload its configuration files:
 alt + r
