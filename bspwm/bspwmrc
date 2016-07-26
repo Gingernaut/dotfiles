@@ -3,7 +3,7 @@
 sxhkd &
 
 bspc config border_width         1
-bspc config window_gap           3
+bspc config window_gap           25
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
@@ -11,16 +11,14 @@ bspc config gapless_monocle      true
 bspc config focus_by_distance    true
 bspc config history_aware_focus  true
 
-bspc config top_padding    38
-bspc config bottom_padding 102
-
+bspc config top_padding    50
+bspc config bottom_padding 25
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc rule -a Docky layer=above border=off manage=on
-
 xrdb ~/.Xresources &
-feh --bg-scale ~/Pictures/Wallpaper/wallpaper.jpg &
+#Loading a smaller wallpaper while the ~150mb wallpaper loads
+feh --bg-scale ~/Pictures/Wallpaper/temp_wall.jpg &
 yabar &
-docky &
-compton
+compton & 
+feh --bg-scale ~/Pictures/Wallpaper/wallpaper.jpg

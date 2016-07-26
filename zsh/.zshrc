@@ -42,8 +42,9 @@ alias subl='subl3'
 alias pingg="ping http://www.google.com"
 alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
-alias 'gnuke'="git reset --hard && git clean -fdx"
 
+alias gnuke="git reset --hard && git clean -fdx"
+alias sp='~/dotfiles/misc/sp.sh'
 
 
 
