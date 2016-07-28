@@ -1,3 +1,3 @@
 sxhkd &
 exec bspwm &
-xrdb ~/.Xresources
+xrdb ~/.Xresources 

@@ -35,16 +35,19 @@ alias wifi-menu='sudo rfkill unblock all; sudo ip link set wlp6s0 up; sudo wifi-
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
 alias update='yaourt -Syua --noconfirm'
-alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old;clean'
+alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old;clear'
 alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
 alias subl='subl3'
-alias pingg="ping http://www.google.com"
+alias pingg="ping www.google.com"
 alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
-alias gnuke="git reset --hard && git clean -fdx"
-alias sp='~/dotfiles/spotify/sp.sh'
+alias gpa='git pull --all'
+alias gnuke="git reset --hard && git clean -fdxi;git pull --all"
+alias 'vi'='vim'
+alias matrix='cmatrix'
+alias inst="yaourt -S --noconfirm"
 
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 

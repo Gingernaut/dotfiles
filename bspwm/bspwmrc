@@ -14,17 +14,14 @@ bspc config history_aware_focus  true
 bspc config active_border_color \#40EB78
 
 bspc config top_padding    48
-bspc config bottom_padding 10
+bspc config bottom_padding 40
 
 bspc monitor -d I II III IV V VI VII VIII IX X
-
-
-bspc rule -a Spotify desktop='^4'
-
 
 xrdb ~/.Xresources &
 #Loading a smaller wallpaper while the ~150mb wallpaper loads
 feh --bg-scale ~/Pictures/Wallpaper/temp_wall.jpg &
 yabar &
+lemonbuddy_wrapper bottom &
 compton --config ~/dotfiles/compton.conf & 
 feh --bg-scale ~/Pictures/Wallpaper/wallpaper.jpg

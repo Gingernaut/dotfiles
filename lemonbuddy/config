@@ -1,0 +1,143 @@
+;=====================================================
+;
+;   To learn more about how to configure Lemonbuddy
+;   go to https://github.com/jaagr/lemonbuddy
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[settings]
+
+throttle_limit = 5
+throttle_ms = 50
+
+[bar/bottom]
+;monitor = eDP1
+bottom = true
+dock = false
+
+width = 100%
+height = 40
+
+background = #BF121314
+foreground = #EAEAEA
+;linecolor = #ff0000
+
+spacing = 1
+lineheight = 3
+
+;separator = |
+
+;locale = en_US.UTF-8
+
+padding_left = 0m
+padding_right = 0
+module_margin_left = 0
+module_margin_right = 0
+
+font-0 = System San Francisco Display:size=11;0
+font-1 = FontAwesome:size=11;0
+
+
+modules-left = bspwm
+;modules-center =
+modules-right = volume cpu ram wireless-network
+
+
+[module/cpu]
+type = internal/cpu
+label =  %percentage%
+format-underline = #E53935
+format-padding = 2
+
+[module/ram]
+type = internal/memory
+label =  %percentage_used%
+format-underline = #E53935
+format-padding = 2
+
+[module/volume]
+type = internal/volume
+;speaker_mixer = Speaker
+;headphone_mixer = Headphone
+;headphone_control_numid = 9
+
+
+format-volume-underline = #E53935
+format-volume-padding = 2
+format-muted-underline = #E53935
+format-muted-padding = 2
+
+label-volume =  %percentage%
+label-muted = 
+
+[module/wireless-network]
+type = internal/network
+interface = wlp6s0
+interval = 3.0
+ping_interval = 10
+
+;format-connected = <ramp-signal> <label-connected>
+;label-connected = %essid%
+label-connected = 
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate_ms = 500
+
+[module/wired-network]
+type = internal/network
+interface = net0
+interval = 3.0
+
+label-connected =    %{T3}%local_ip%%{T-}
+label-disconnected-foreground = #66
+
+[module/bspwm]
+type = internal/bspwm
+format-padding = 2
+workspace_icon-0 = chrome;
+workspace_icon-1 = code;
+workspace_icon-2 = slack;
+workspace_icon-3 = spotify;
+workspace_icon-default = 
+
+
+format = <label-state> <label-mode>
+
+label-active = %icon%
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
+
+label-active-padding = 4
+label-occupied-padding = 4
+label-urgent-padding = 4
+label-empty-padding = 4
+
+
+label-occupied-underline = #A020F0
+label-active-underline = #A020F0
+label-active-background = #2a2c2d
+
+
+label-monocle = 
+label-fullscreen = 
+label-floating = 
+label-locked = 
+label-sticky = 
+label-private = 
+
+; vim:ft=dosini
+
