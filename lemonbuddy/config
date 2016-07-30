@@ -18,7 +18,7 @@ bottom = true
 dock = false
 
 width = 100%
-height = 40
+height = 45
 
 background = #BF121314
 foreground = #EAEAEA
@@ -31,12 +31,12 @@ lineheight = 3
 
 ;locale = en_US.UTF-8
 
-padding_left = 0m
+padding_left = 0
 padding_right = 0
 module_margin_left = 0
 module_margin_right = 0
 
-font-0 = System San Francisco Display:size=11;0
+font-0 = System San Francisco Display:size=8;0
 font-1 = FontAwesome:size=11;0
 
 
@@ -78,9 +78,8 @@ interface = wlp6s0
 interval = 3.0
 ping_interval = 10
 
-;format-connected = <ramp-signal> <label-connected>
-;label-connected = %essid%
-label-connected = 
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
 label-disconnected =    not connected
 label-disconnected-foreground = #66
 
@@ -104,12 +103,13 @@ interval = 3.0
 label-connected =    %{T3}%local_ip%%{T-}
 label-disconnected-foreground = #66
 
+
 [module/bspwm]
 type = internal/bspwm
 format-padding = 2
 workspace_icon-0 = chrome;
 workspace_icon-1 = code;
-workspace_icon-2 = slack;
+workspace_icon-2 = slack;
 workspace_icon-3 = spotify;
 workspace_icon-default = 
 
@@ -130,14 +130,6 @@ label-empty-padding = 4
 label-occupied-underline = #A020F0
 label-active-underline = #A020F0
 label-active-background = #2a2c2d
-
-
-label-monocle = 
-label-fullscreen = 
-label-floating = 
-label-locked = 
-label-sticky = 
-label-private = 
 
 ; vim:ft=dosini
 
