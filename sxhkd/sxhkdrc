@@ -4,7 +4,7 @@
 
 # terminal emulator
 alt + Return
-    termite
+    lilyterm
 
 # program launcher
 alt + d

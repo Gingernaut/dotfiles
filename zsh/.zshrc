@@ -19,6 +19,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 alias ll='ls -l'
@@ -45,13 +46,17 @@ alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 alias gpa='git pull --all'
 alias gnuke="git reset --hard && git clean -fdxi;git pull --all"
-alias 'vi'='vim'
+alias vi='vim'
 alias matrix='cmatrix'
 alias inst="yaourt -S --noconfirm"
+alias schemer='~/Go/bin/schemer2'
+alias fetch='neofetch'
 
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
 # The Fuck package
 eval "$(thefuck --alias)"
 eval "$(thefuck --alias FUCK)"
+
+
 source /usr/share/doc/pkgfile/command-not-found.zsh
