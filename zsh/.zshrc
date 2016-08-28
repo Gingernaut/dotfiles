@@ -19,7 +19,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 alias ll='ls -l'
@@ -32,7 +31,7 @@ alias polyfy='~/dotfiles/misc/polyfy.sh'
 alias lock='~/dotfiles/misc/lock/lock.sh'
 alias listi='yaourt -Qqet' ## lists all user installed packages
 alias pacman='sudo pacman'
-alias wifi-menu='sudo rfkill unblock all; sudo ip link set wlp6s0 up; sudo wifi-menu'
+alias wifi='sudo rfkill unblock all; sudo ip link set wlp6s0 up; sudo wifi-menu'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
 alias update='yaourt -Syua --noconfirm'
@@ -46,11 +45,13 @@ alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 alias gpa='git pull --all'
 alias gnuke="git reset --hard && git clean -fdxi;git pull --all"
-alias vi='vim'
+alias vi='gvim'
+alias vim='gvim'
 alias matrix='cmatrix'
 alias inst="yaourt -S --noconfirm"
 alias schemer='~/Go/bin/schemer2'
 alias fetch='neofetch'
+
 
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 

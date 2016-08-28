@@ -17,9 +17,8 @@ Plug 'chriskempson/base16-vim'
 call plug#end()
 
 set t_Co=256
+let base16colorspace=256
 
-let base16colorspace
-=256
 colorscheme base16-default-dark
 set number
 set mouse=a
