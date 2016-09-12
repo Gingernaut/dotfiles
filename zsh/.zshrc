@@ -50,7 +50,8 @@ alias matrix='cmatrix'
 alias inst="yaourt -S --noconfirm"
 alias schemer='~/Go/bin/schemer2'
 alias fetch='neofetch'
-
+alias grm='git rm -rf'
+alias gcache='git config credential.helper cache'
 
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
