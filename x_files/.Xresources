@@ -16,11 +16,12 @@ rofi.color-window: argb:41303133, #40eb78, #40eb78
 rofi.color-normal: #303133, #ffffff, #303133, argb:c8303133, #40eb78
 rofi.color-active: #4a4a4a, #40eb78, #303133, #303133, #ffbb00
 rofi.color-urgent: #303133, #dc322f, #303133, #303133, #f9ff00
+
 rofi.separator-style:                solid
-rofi.opacity:                        85
+rofi.opacity:                        90
 rofi.width:                          50
 rofi.font:                           Inconsolata 32
-rofi.padding:                        300
+rofi.padding:                        0
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 rofi.case-sensitive:                 false
