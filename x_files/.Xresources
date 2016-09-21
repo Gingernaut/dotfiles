@@ -73,6 +73,8 @@ URxvt.internalBorder:      0
 URxvt.externalBorder:      0
 URxvt.font: xft:Consolas:size=12
 URxvt.scrollBar: false
+URxvt.cursorBlink: 1
+URxvt.cursorUnderline: 1
 
 urxvt*depth: 32
 urxvt*background: rgba:1000/1000/1000/F200
