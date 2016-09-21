@@ -41,11 +41,11 @@ set nowb
 set noswapfile
 " set cursorline
 
-" spaces instead of tabs
-set expandtab
 set smarttab
+set autoindent
+set noexpandtab
+set tabstop=4
 set shiftwidth=4
-set softtabstop=4
 
 set wildmenu
 set ai
