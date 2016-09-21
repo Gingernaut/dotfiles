@@ -77,7 +77,8 @@ URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
 
 urxvt*depth: 32
-urxvt*background: rgba:1000/1000/1000/F200
+URxvt*background: [85]#121212
+!urxvt*background: rgba:1000/1000/1000/F200
 
 
 urxvt*boldMode:      on
