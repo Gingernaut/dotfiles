@@ -20,7 +20,7 @@ dock = false
 width = 100%
 height = 45
 
-background = #00111111
+background = #00222222
 foreground = #EAEAEA
 ;linecolor = #ff0000
 

@@ -4,7 +4,7 @@
 
 # terminal emulator
 alt + Return
-    lilyterm
+    urxvt
 
 # program launcher
 alt + d
@@ -12,7 +12,7 @@ alt + d
 
 # make sxhkd reload its configuration files:
 alt + r
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd && xrdb ~/.Xresources
 
 alt + shift + m
     docky
@@ -155,4 +155,4 @@ alt + shift + x
     ~/dotfiles/misc/lock/lock.sh
 
 alt + v
-	tdrop -a -w 100% -h 50% lilyterm
+	tdrop -a -w 100% -h 50% urxvt
