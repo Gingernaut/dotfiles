@@ -52,7 +52,4 @@ alias upyolo='yaourt -Syyuua --devel --noconfirm'
 
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
-eval "$(thefuck --alias)"
-eval "$(thefuck --alias oops)"
-
 source /usr/share/doc/pkgfile/command-not-found.zsh
