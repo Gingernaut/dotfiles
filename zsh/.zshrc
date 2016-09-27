@@ -8,6 +8,8 @@ compinit
 autoload -U compinit
 compinit
 
+setopt NO_BEEP
+
 #Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -35,8 +37,7 @@ alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
 alias subl='subl3'
-alias ping='ping -c 4 '
-alias pingg="ping www.google.com"
+alias pingg="httpstat http://google.com; ping -c 4 www.google.com"
 alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 alias gpa='git pull --all'
@@ -50,6 +51,18 @@ alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
 
+
+webstat() {
+	httpstat "http://"$1
+	ping -c 4 "www."$1
+}
+
+
+
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
+
+export GOPATH=~/Go
+export PATH=$PATH:$GOPATH/bin
+
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
