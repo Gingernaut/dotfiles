@@ -33,6 +33,7 @@ alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
 alias update='yaourt -Syua --noconfirm'
 alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old;clear'
+alias upcl='update;clean;'
 alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
@@ -51,18 +52,15 @@ alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
 
-
 webstat() {
 	httpstat "http://"$1
 	ping -c 4 "www."$1
 }
 
 
-
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
-
 
 source /usr/share/doc/pkgfile/command-not-found.zsh

@@ -155,4 +155,4 @@ alt + shift + x
     ~/dotfiles/misc/lock/lock.sh
 
 alt + v
-	tdrop -a -w 100% -h 50% urxvt
+	tdrop -a -w 100% -h 50% termite
