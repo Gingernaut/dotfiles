@@ -51,7 +51,8 @@ alias fetch='neofetch'
 alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
-
+alias dock='~/dotfiles/misc/dock.sh'
+alias undock='~/dotfiles/misc/undock.sh'
 webstat() {
 	httpstat "http://"$1
 	ping -c 4 "www."$1
