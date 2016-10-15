@@ -38,7 +38,7 @@ alias untar='tar -xvf'
 alias open='thunar'
 alias gpom='git push origin master'
 alias subl='subl3'
-alias pingg="httpstat http://google.com; ping -c 4 www.google.com"
+alias pingg="webstat google.com"
 alias rickroll='nc rya.nc 1987'
 alias google='google-chrome-stable'
 alias gpa='git pull --all'
@@ -55,10 +55,10 @@ alias dock='~/dotfiles/misc/dock.sh'
 alias undock='~/dotfiles/misc/undock.sh'
 webstat() {
 	httpstat "http://"$1
-	ping -c 4 "www."$1
+	hey -d 100 "http://"$1
 }
 
-
+alias pserver='python -m http.server'
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
 export GOPATH=~/Go
