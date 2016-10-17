@@ -28,44 +28,44 @@ rofi.font:                           Inconsolata 32
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #ffffff
-*.background:   #222222
-*.cursorColor:  #ffffff
+*.foreground:   #93a1a1
+*.background:   #002b36
+*.cursorColor:  #93a1a1
 
 ! black
-*.color0:       #0c0d20
-*.color8:       #323147
+*.color0:       #002b36
+*.color8:       #657b83
 
 ! red
-*.color1:       #624fff
-*.color9:       #45455b
+*.color1:       #dc322f
+*.color9:       #dc322f
 
 ! green
-*.color2:       #72688b
-*.color10:      #bca0f7
+*.color2:       #859900
+*.color10:      #859900
 
 ! yellow
-*.color3:       #2c1f62
-*.color11:      #4d3c88
+*.color3:       #b58900
+*.color11:      #b58900
 
 ! blue
-*.color4:       #5a39ac
-*.color12:      #605a72
+*.color4:       #268bd2
+*.color12:      #268bd2
 
 ! magenta
-*.color5:       #3f279d
-*.color13:      #7f76c7
+*.color5:       #6c71c4
+*.color13:      #6c71c4
 
 ! cyan
-*.color6:       #ca87e1
-*.color14:      #7a4a9e
+*.color6:       #2aa198
+*.color14:      #2aa198
 
 ! white
-*.color7:       #845bdf
-*.color15:      #937dae
+*.color7:       #93a1a1
+*.color15:      #fdf6e3
 
 
-URxvt.perl-ext-common: default,matcher
+!URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.perl-ext-common:  default,tabbedex
@@ -77,7 +77,7 @@ URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
 
 urxvt*depth: 32
-URxvt*background: [85]#111111
+!URxvt*background: [85]#111111
 !urxvt*background: rgba:1000/1000/1000/F200
 
 

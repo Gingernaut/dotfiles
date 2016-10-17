@@ -51,8 +51,7 @@ alias fetch='neofetch'
 alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
-alias dock='~/dotfiles/misc/dock.sh'
-alias undock='~/dotfiles/misc/undock.sh'
+
 webstat() {
 	httpstat "http://"$1
 	hey -d 100 "http://"$1
@@ -63,5 +62,4 @@ PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
-
-source /usr/share/doc/pkgfile/command-not-found.zsh
+source /usr/share/nvm/init-nvm.sh

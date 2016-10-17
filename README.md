@@ -1,9 +1,9 @@
 # Dotfiles
 
-These are my arch linux configuration files with bspwm
+These are my Manjaro dotfiles with KDE.
 
-![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/screenshot.png)
-![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/fake_dirty.png)
-![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/real_dirty.png)
-![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/rofi.png)
-![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/clean_desktop.png)
+![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/.png)
+![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/.png)
+![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/.png)
+![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/.png)
+![alt tag](https://github.com/Gingernaut/dotfiles/blob/master/screenshots/.png)
