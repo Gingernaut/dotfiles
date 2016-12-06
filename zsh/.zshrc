@@ -51,10 +51,8 @@ alias fetch='neofetch'
 alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
-alias statinit='cp ~/Documents/software_resources/index.html index.html'
 alias reload='xrdb ~/.Xresources'
-
-
+alias postman='~/Documents/Postman/Postman'
 webstat() {
 	httpstat "http://"$1
 	hey -d 100 "http://"$1
