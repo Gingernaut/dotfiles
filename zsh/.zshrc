@@ -58,6 +58,13 @@ webstat() {
 	hey -d 100 "http://"$1
 }
 
+gall() {
+	git add .
+	git commit -m $1
+	git push origin master
+}
+
+
 alias pserver='python -m http.server'
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 
