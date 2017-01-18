@@ -52,7 +52,9 @@ alias grm='git rm -rf'
 alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias reload='xrdb ~/.Xresources'
-alias postman='~/Documents/Postman/Postman'
+alias intellij='intellij-idea-ultimate-edition'
+alias linxone='ssh -i /home/tyler/.ssh/pems/linuxone.pem root@148.100.5.244'
+
 webstat() {
 	httpstat "http://"$1
 	hey -d 100 "http://"$1
