@@ -9,6 +9,9 @@ autoload -U compinit
 compinit
 
 setopt NO_BEEP
+setopt no_beep         #turn off bell
+setopt NO_LIST_BEEP
+set bell-style none
 
 #Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -54,6 +57,24 @@ alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias reload='xrdb ~/.Xresources'
 alias intellij='intellij-idea-ultimate-edition'
 alias linxone='ssh -i /home/tyler/.ssh/pems/linuxone.pem root@148.100.5.244'
+alias dclean='docker rmi $(docker images -f "dangling=true" -q)'
+
+dnuke() {
+	docker rm $(docker ps -a -q)
+	docker rmi $(docker images -q)
+}
+
+dock() {
+	intern=eDP1
+	extern=HDMI1
+
+	if xrandr | grep "$extern disconnected"; then
+	    xrandr --output "$extern" --off --output "$intern" --auto
+
+	else
+	    xrandr --output "$intern" --off --output "$extern" --auto
+	fi
+}
 
 webstat() {
 	httpstat "http://"$1
@@ -66,6 +87,9 @@ gall() {
 	git push origin master
 }
 
+gcomp() {
+	g++ -Wall -g -std=c++14 *.cpp -o $1
+}
 
 alias pserver='python -m http.server'
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin

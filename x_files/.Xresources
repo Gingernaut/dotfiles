@@ -3,7 +3,7 @@
 ! ------------------------------------------------------------------------------
 
 !Xft.dpi: 192
-!Xft.dpi: 96
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -24,7 +24,7 @@ rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
 rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
 rofi.color-window:                   #ffffff,#f5f5f5
 rofi.separator-style:                solid
-rofi.font:                           Inconsolata 32
+rofi.font:                           Inconsolata 12
 
 ! ------------------------------------------------------------------------------
 ! urxvt
