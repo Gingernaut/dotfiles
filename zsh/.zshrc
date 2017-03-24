@@ -57,7 +57,9 @@ alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias reload='xrdb ~/.Xresources'
 alias intellij='intellij-idea-ultimate-edition'
 alias linxone='ssh -i /home/tyler/.ssh/pems/linuxone.pem root@148.100.5.244'
+
 alias dclean='docker rmi $(docker images -f "dangling=true" -q)'
+alias ctop='nocorrect ctop '
 
 dnuke() {
 	docker rm $(docker ps -a -q)
@@ -97,3 +99,4 @@ PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 source /usr/share/nvm/init-nvm.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

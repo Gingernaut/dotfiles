@@ -41,6 +41,10 @@ set nowb
 set noswapfile
 " set cursorline
 
+" :w!! 
+" write the file when you accidentally opened it without the right (root) privileges
+cmap w!! w !sudo tee % > /dev/null
+
 set smarttab
 set autoindent
 set noexpandtab
