@@ -20,8 +20,8 @@ fi
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lha'
 alias al='la'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
@@ -56,7 +56,6 @@ alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias reload='xrdb ~/.Xresources'
 alias intellij='intellij-idea-ultimate-edition'
-alias linxone='ssh -i /home/tyler/.ssh/pems/linuxone.pem root@148.100.5.244'
 
 alias dclean='docker rmi $(docker images -f "dangling=true" -q)'
 alias ctop='nocorrect ctop '
