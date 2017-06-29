@@ -56,7 +56,7 @@ alias gcache='git config credential.helper cache'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias reload='xrdb ~/.Xresources'
 alias intellij='intellij-idea-ultimate-edition'
-
+alias cat='cat -n'
 alias dclean='docker rmi $(docker images -f "dangling=true" -q)'
 alias ctop='nocorrect ctop '
 
@@ -99,3 +99,11 @@ export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+
+alias pbox=' ssh root@192.241.244.104'
+
+
+
+
