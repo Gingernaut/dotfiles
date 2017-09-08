@@ -60,11 +60,6 @@ alias cat='cat -n'
 alias dclean='docker rmi $(docker images -f "dangling=true" -q)'
 alias ctop='nocorrect ctop '
 
-dnuke() {
-	docker rm $(docker ps -a -q)
-	docker rmi $(docker images -q)
-}
-
 dock() {
 	intern=eDP1
 	extern=HDMI1
@@ -101,9 +96,22 @@ source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-
+alias cla="clear;la"
 alias pbox=' ssh root@192.241.244.104'
 
 
-
+# Remove all docker containers running and exited
+alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
+# Remove all docker images
+alias docker-rmia='__drmia() { docker images -q "$@" | xargs -r docker rmi -f; }; __drmia'
+# Remove all custom docker networks
+alias docker-rmnet='__drmnet() { docker network ls -q -f type=custom "$@" | xargs -r docker network rm; }; __drmnet'
+# Remove all unused volumes
+alias docker-rmvol='__drmvol() { docker volume ls -q "$@" | xargs -r docker volume rm; }; __drmvol'
+# Remove all docker containers and all docker images
+alias docker-rmall='docker-rma && docker-rmia'
+# Remove all docker containers, images, custom networks, and volumes
+alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
+# Remove only exited containers, unused images, unused networks, and unused volumes
+alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
