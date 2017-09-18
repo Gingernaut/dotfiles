@@ -2,14 +2,21 @@
 ! General settings
 ! ------------------------------------------------------------------------------
 
-Xft.dpi: 192
-!Xft.dpi: 96
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
+! Merging ~/.Xresources
+
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgba
+Xft.autohint: false
+Xft.lcdfilter: lcddefault
 Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
+
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
@@ -31,49 +38,49 @@ rofi.font:                           Inconsolata 22
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #515253
-*.background:   #feffff
-*.cursorColor:  #515253
+*.foreground:   #c0c5ce
+*.background:   #2b303b
+*.cursorColor:  #c0c5ce
 
-*.color0:       #0c0d0e
-*.color8:       #737475
+! black
+*.color0:       #2b303b
+*.color8:       #65737e
 
 ! red
-*.color1:       #e31a1c
-*.color9:       #e31a1c
-z
+*.color1:       #bf616a
+*.color9:       #bf616a
+
 ! green
-*.color2:       #31a354
-*.color10:      #31a354
+*.color2:       #a3be8c
+*.color10:      #a3be8c
 
 ! yellow
-*.color3:       #dca060
-*.color11:      #dca060
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
 
 ! blue
-*.color4:       #3182bd
-*.color12:      #3182bd
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
 
 ! magenta
-*.color5:       #756bb1
-*.color13:      #756bb1
+*.color5:       #b48ead
+*.color13:      #b48ead
 
 ! cyan
-*.color6:       #80b1d3
-*.color14:      #80b1d3
+*.color6:       #96b5b4
+*.color14:      #96b5b4
 
 ! white
-*.color7:       #b7b8b9
-*.color15:      #fcfdfe
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
 
 
-!URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common:  default,tabbedex,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt.perl-ext-common:  default,tabbedex
 URxvt.internalBorder:      0
 URxvt.externalBorder:      0
-URxvt.font: xft:Consolas:size=10
+URxvt.font: xft:Inconsolata:size=12
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
