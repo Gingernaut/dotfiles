@@ -11,7 +11,6 @@ compinit
 setopt NO_BEEP
 setopt NO_LIST_BEEP
 set bell-style none
-
 #Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -45,8 +44,8 @@ alias matrix='cmatrix'
 alias inst="yaourt -S --noconfirm"
 alias fetch='neofetch'
 alias upyolo='yaourt -Syyuua --devel --noconfirm'
-alias cat='cat -n'
 alias ctop='nocorrect ctop'
+alias monitor='~/dotfiles/setMonitors.sh'
 
 webstat() {
 	httpstat "http://"$1
@@ -65,29 +64,35 @@ gcomp() {
 
 alias pserver='python -m http.server'
 PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
-
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
-export PATH="$PATH:$HOME/.yarn/bin/"
+export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+export PATH="$(yarn global bin):$PATH"
 
 alias cla="clear;la"
 alias pbox=' ssh root@192.241.244.104'
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
+
 # Remove all docker images
 alias docker-rmia='__drmia() { docker images -q "$@" | xargs -r docker rmi -f; }; __drmia'
+
 # Remove all custom docker networks
 alias docker-rmnet='__drmnet() { docker network ls -q -f type=custom "$@" | xargs -r docker network rm; }; __drmnet'
+
 # Remove all unused volumes
 alias docker-rmvol='__drmvol() { docker volume ls -q "$@" | xargs -r docker volume rm; }; __drmvol'
+
 # Remove all docker containers and all docker images
 alias docker-rmall='docker-rma && docker-rmia'
+
 # Remove all docker containers, images, custom networks, and volumes
 alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
+
 # Remove only exited containers, unused images, unused networks, and unused volumes
 alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
