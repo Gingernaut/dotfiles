@@ -45,8 +45,8 @@ gall() {
 
 alias pserver='python -m http.server'
 
-source /usr/share/nvm/init-nvm.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
 
 alias cla="clear;la"
 
@@ -65,3 +65,5 @@ alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
 # Remove only exited containers, unused images, unused networks, and unused volumes
 alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
+export QUALTRICSHOSTNAME=ops.b1-prv.tpeterson.local
+export MONOLITH_PROJECT_DIR='~/Code/monolith/'
