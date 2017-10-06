@@ -2,7 +2,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 bindkey -v
-zstyle :compinstall filename '/home/tyler/.zshrc'
 autoload -Uz compinit
 compinit
 autoload -U compinit
@@ -25,32 +24,12 @@ alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias top='htop'
 alias ifconfig='ip addr'
-alias polyfy='~/dotfiles/misc/polyfy.sh'
-alias lock='~/dotfiles/misc/lock/lock.sh'
-alias listi='yaourt -Qqet' ## lists all user installed packages
-alias pacman='sudo pacman'
-alias shutdown='sudo shutdown now'
-alias reboot='sudo reboot now'
-alias update='yaourt -Syua --noconfirm'
-alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old'
-alias upcl='update;clean'
 alias untar='tar -xvf'
 alias gpom='git push origin master'
-alias pingg="webstat google.com"
-alias rickroll='nc rya.nc 1987'
-alias google='google-chrome-stable'
 alias vi='vim'
-alias matrix='cmatrix'
-alias inst="yaourt -S --noconfirm"
 alias fetch='neofetch'
-alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias ctop='nocorrect ctop'
-alias monitor='~/dotfiles/setMonitors.sh'
 
-webstat() {
-	httpstat "http://"$1
-	hey -d 100 "http://"$1
-}
 
 gall() {
 	git add .
@@ -63,17 +42,11 @@ gcomp() {
 }
 
 alias pserver='python -m http.server'
-PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
-export GOPATH=~/Go
-export PATH=$PATH:$GOPATH/bin
-export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH="$(yarn global bin):$PATH"
 
 alias cla="clear;la"
-alias pbox=' ssh root@192.241.244.104'
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
