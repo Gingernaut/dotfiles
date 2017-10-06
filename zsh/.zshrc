@@ -73,7 +73,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export PATH="$(yarn global bin):$PATH"
 
 alias cla="clear;la"
-alias pbox=' ssh root@192.241.244.104'
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
