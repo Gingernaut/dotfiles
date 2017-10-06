@@ -58,3 +58,4 @@
     trim = !git reflog expire --expire=now --all && git gc --prune=now
 
 	nuke = !git reset --hard && git clean -fdx
+	git = !exec git
