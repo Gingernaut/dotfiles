@@ -27,28 +27,15 @@ alias vrc='vim ~/.zshrc'
 alias top='htop'
 alias ifconfig='ip addr'
 alias untar='tar -xvf'
-alias pingg="webstat google.com"
 alias vi='vim'
 alias ctop='nocorrect ctop'
-
-webstat() {
-	httpstat "http://"$1
-	hey -d 100 "http://"$1
-}
-
-gall() {
-	git add .
-	git commit -m $1
-	git push origin $2
-}
-
+alias cla="clear;la"
 
 alias pserver='python -m http.server'
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 
-alias cla="clear;la"
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
@@ -65,5 +52,4 @@ alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
 # Remove only exited containers, unused images, unused networks, and unused volumes
 alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
-export QUALTRICSHOSTNAME=ops.b1-prv.tpeterson.local
-export MONOLITH_PROJECT_DIR='~/Code/monolith/'
+[ -f ~/dotfiles/zsh/.worksettings ] && source ~/dotfiles/zsh/.worksettings
