@@ -70,7 +70,7 @@ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 
 alias cla="clear;la"
 
