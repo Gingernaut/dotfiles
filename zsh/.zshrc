@@ -83,7 +83,7 @@ PATH=$PATH:/home/tyler/.gem/ruby/2.3.0/bin
 export GOPATH=~/Go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
-export PATH="$(yarn global bin):$PATH"
+# export PATH="$(yarn global bin):$PATH"
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
