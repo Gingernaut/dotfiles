@@ -30,7 +30,7 @@ alias untar='tar -xvf'
 alias vi='vim'
 alias ctop='nocorrect ctop'
 alias cla="clear;la"
-
+alias pullall='~/dotfiles/pullAll.sh'
 alias pserver='python -m http.server'
 
 export NVM_DIR="$HOME/.nvm"
