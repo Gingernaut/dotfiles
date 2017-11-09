@@ -15,6 +15,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
+ln -s /$USER/dotfiles/vim/.vimrc /$USER/.vimrc
 # General server
 sudo apt-get install fail2ban;
 
