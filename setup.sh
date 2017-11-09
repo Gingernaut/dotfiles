@@ -1,4 +1,6 @@
 # run this file after installing zsh and prezto
+ln -s /$USER/dotfiles/.gitconfig /$USER/.gitconfig
+
 
 rm -f ~/.zshrc;
 rm -f ~/.zpreztorc;
