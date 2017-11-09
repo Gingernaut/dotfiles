@@ -29,7 +29,10 @@ alias gpom='git push origin master'
 alias vi='vim'
 alias fetch='neofetch'
 alias ctop='nocorrect ctop'
-
+alias clean='sudo apt autoremove -y'
+alias inst='sudo apt-get install -y'
+alias update='sudo apt-get update -y; sudo apt-get upgrade -y'
+alias upcl='update;clean'
 
 gall() {
 	git add .
@@ -42,9 +45,6 @@ gcomp() {
 }
 
 alias pserver='python -m http.server'
-
-source /usr/share/nvm/init-nvm.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias cla="clear;la"
 
