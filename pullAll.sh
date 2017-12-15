@@ -16,3 +16,5 @@ cd ~/Code/TARS; git pull origin master; pwd; echo "------- \n \n";
 cd ~/Code/text-tools-permissions; git pull origin master; pwd; echo "------- \n \n";
 cd ~/Code/topic_query_coder; git pull origin master; pwd; echo "------- \n \n";
 cd ~/Code/wordnet-lemmatizer-plugin; git pull origin master; pwd; echo "------- \n \n";
+cd ~/Code/QueryBuilderCLI; git pull origin master; pwd; echo "------- \n \n";
+cd ~/Code/text-cli; git pull origin master; pwd; echo "------- \n \n";
