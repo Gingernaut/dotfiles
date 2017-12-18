@@ -17,9 +17,6 @@ ln -s /$USER/dotfiles/vim/.vimrc /$USER/.vimrc;
 # General server
 sudo apt-get install fail2ban;
 
-sudo apt-get install logwatch;
-sudo echo "/usr/sbin/logwatch --output mail --mailto tylermpeterson36@gmail.com --detail high" >> /etc/cron.daily/00logwatch;
-
 sudo apt-get update -y;
 sudo apt-get upgrade -y;
 
