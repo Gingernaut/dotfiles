@@ -47,6 +47,7 @@ alias upyolo='yaourt -Syyuua --devel --noconfirm'
 alias ctop='nocorrect ctop'
 alias monitor='~/dotfiles/setMonitors.sh'
 alias cla="clear;la"
+alias pipup="sudo pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo  pip3 install -U"
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
