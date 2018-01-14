@@ -75,7 +75,7 @@ rofi.font:                           Inconsolata 28
 *.color15:      #d0d0d0
 
 
-URxvt.perl-ext-common:  default,tabbedex,matcher
+URxvt.perl-ext-common:  default,tabbed,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 0
 URxvt.internalBorder:      0
