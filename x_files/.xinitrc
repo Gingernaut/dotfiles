@@ -4,11 +4,6 @@
 #
 # Executed by startx (run your window manager from here)
 
-if [[ -f ~/.extend.xinitrc ]];then
-	. ~/.extend.xinitrc
-else
-	DEFAULT_SESSION=xfce4-session
-fi
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -59,7 +54,6 @@ get_session(){
 		lxde) dbus_args+=(startlxde) ;;
 		lxqt) dbus_args+=(lxqt-session) ;;
 		mate) dbus_args+=(mate-session) ;;
-		xfce) dbus_args+=(xfce4-session) ;;
 		openbox) dbus_args+=(openbox-session) ;;
 		*) dbus_args+=($DEFAULT_SESSION) ;;
 	esac

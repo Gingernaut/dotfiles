@@ -9,7 +9,7 @@
 #endif
 
 
-Xft.dpi: 96
+Xft.dpi: 192
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgba
@@ -38,46 +38,46 @@ rofi.font:                           Inconsolata 28
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #c0c5ce
-*.background:   #2b303b
-*.cursorColor:  #c0c5ce
+*.foreground:   #e6e1dc
+*.background:   #292d3e
+*.cursorColor:  #e6e1dc
 
 ! black
-*.color0:       #2b303b
-*.color8:       #65737e
+*.color0:       #2b2b2b
+*.color8:       #9eb1e2
 
 ! red
-*.color1:       #bf616a
-*.color9:       #bf616a
+*.color1:       #f07178
+*.color9:       #f07178
 
 ! green
-*.color2:       #a3be8c
-*.color10:      #a3be8c
+*.color2:       #c3e88d
+*.color10:      #c3e88d
 
 ! yellow
-*.color3:       #ebcb8b
-*.color11:      #ebcb8b
+*.color3:       #ffcb6b
+*.color11:      #ffcb6b
 
 ! blue
-*.color4:       #8fa1b3
-*.color12:      #8fa1b3
+*.color4:       #82aaff
+*.color12:      #82aaff
 
 ! magenta
-*.color5:       #b48ead
-*.color13:      #b48ead
+*.color5:       #c792ea
+*.color13:      #c792ea
 
 ! cyan
-*.color6:       #96b5b4
-*.color14:      #96b5b4
+*.color6:       #c3e88d
+*.color14:      #c3e88d
 
 ! white
-*.color7:       #c0c5ce
-*.color15:      #eff1f5
+*.color7:       #d0d0d0
+*.color15:      #d0d0d0
 
 
 URxvt.perl-ext-common:  default,tabbedex,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 1
+URxvt.matcher.button: 0
 URxvt.internalBorder:      0
 URxvt.externalBorder:      0
 URxvt.font: xft:Inconsolata:size=12
