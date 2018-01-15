@@ -49,7 +49,7 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 # General server
-sudo apt-get install fail2ban;
+sudo apt-get install fail2ban -y;
 
 
 
