@@ -44,6 +44,16 @@ gcomp() {
 	g++ -Wall -g -std=c++14 *.cpp -o $1
 }
 
+memoryUp() {
+	sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+	sudo /sbin/mkswap /var/swap.1
+	sudo /sbin/swapon /var/swap.1
+}
+
+memoryDown() {
+	sudo swapoff /var/swap.1
+	sudo rm /var/swap.1
+}
 alias pserver='python -m http.server'
 
 alias cla="clear;la"

@@ -1,8 +1,7 @@
 #!/bin/zsh
-set -e
-set -o pipefail
+set -x
 
-rm -f ~/.zshrc
+rm -rf ~/.z&
 
 sudo apt-get update -y && sudo apt-get upgrade -y
 
@@ -49,12 +48,10 @@ sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-c
 sudo chmod +x /usr/local/bin/docker-compose
 
 # General server
-sudo apt-get install fail2ban -y;
-
-
+sudo apt-get install fail2ban htop -y;
 
 source ~/.zshrc
-sudo apt-get update -y && sudo apt-get upgrade -y
+update;clean
 printf "-----------------------"
 printf "!! Install completed !!"
 printf "-----------------------"
