@@ -25,31 +25,13 @@ alias al='la'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias top='htop'
-alias ifconfig='ip addr'
 alias untar='tar -xvf'
 alias vi='vim'
 alias ctop='nocorrect ctop'
 alias cla="clear;la"
 alias pullall='~/dotfiles/pullAll.sh'
-alias pserver='python -m http.server'
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
-
-
-# Remove all docker containers running and exited
-alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
-# Remove all docker images
-alias docker-rmia='__drmia() { docker images -q "$@" | xargs -r docker rmi -f; }; __drmia'
-# Remove all custom docker networks
-alias docker-rmnet='__drmnet() { docker network ls -q -f type=custom "$@" | xargs -r docker network rm; }; __drmnet'
-# Remove all unused volumes
-alias docker-rmvol='__drmvol() { docker volume ls -q "$@" | xargs -r docker volume rm; }; __drmvol'
-# Remove all docker containers and all docker images
-alias docker-rmall='docker-rma && docker-rmia'
-# Remove all docker containers, images, custom networks, and volumes
-alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
-# Remove only exited containers, unused images, unused networks, and unused volumes
-alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
 [ -f ~/dotfiles/zsh/.worksettings ] && source ~/dotfiles/zsh/.worksettings

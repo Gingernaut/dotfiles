@@ -1,3 +1,3 @@
 # Dotfiles
 
-These are my linux config files.
+These are my work macbook config files.
