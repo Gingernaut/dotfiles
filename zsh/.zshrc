@@ -64,7 +64,6 @@ alias docker-nuke='docker-rmall; docker-rmnet; docker-rmvol'
 # Remove only exited containers, unused images, unused networks, and unused volumes
 alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; docker-rmnet; docker-rmvol -f dangling=true'
 
-
 webstat() {
 	httpstat "http://"$1
 	hey -d 100 "http://"$1

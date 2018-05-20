@@ -59,3 +59,6 @@
 
 	nuke = !git reset --hard && git clean -fdx
 	git = !exec git
+
+[core]
+	editor = vim
