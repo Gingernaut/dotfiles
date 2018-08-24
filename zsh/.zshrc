@@ -30,6 +30,8 @@ alias vi='vim'
 alias ctop='nocorrect ctop'
 alias cla="clear;la"
 alias pullall='~/dotfiles/pullAll.sh'
+alias update='brew update;pullall'
+alias cat='bat'
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
