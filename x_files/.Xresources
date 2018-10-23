@@ -88,7 +88,7 @@ URxvt.cursorUnderline: 1
 urxvt*depth: 32
 !urxvt*background: [85]#111111
 !urxvt*background: rgba:1000/1000/1000/F200
-
+URxvt.iconFile:     /usr/share/icons/Clarity/scalable/apps/terminal.svg
 
 urxvt*boldMode:      on
 urxvt*colorMode:     on
