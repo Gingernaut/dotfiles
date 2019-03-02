@@ -34,9 +34,9 @@ sudo fc-cache -fv
 printf "--------- \n"
 printf "installing development packages \n \n"
 
-yaourt -S --noconfirm vim go zsh-syntax-highlighting \
+yay -S --noconfirm vim go zsh-syntax-highlighting \
     docker docker-compose htop nvm rofi rustup valgrind \
-    visual-studio-code-bin tree strace gzip unzip ctop \
+    code tree strace gzip unzip ctop bat neofetch xclip rofi \
 
 
 # Docker
@@ -53,7 +53,7 @@ go get -u github.com/davecheney/httpstat
 go get -u github.com/rakyll/hey
 
 printf "installing user packages"
-yaourt -S --noconfirm spotify qbittorrent slack-desktop sqlectron-gui urxvt-unicode
+yay -S --noconfirm spotify qbittorrent slack-desktop
 
 source ~/.zshrc
 printf "-----------------------"

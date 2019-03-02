@@ -29,23 +29,20 @@ alias vrc='vim ~/.zshrc'
 alias top='htop'
 alias ifconfig='ip addr'
 alias pserver='python -m http.server'
-alias listi='yaourt -Qqet'
-alias pacman='sudo pacman'
+alias listi='yay -Qqet'
 alias shutdown='sudo shutdown now'
 alias reboot='sudo reboot now'
-alias update='yaourt -Syua --noconfirm'
-alias clean='pacman -Rsn $(pacman -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old'
+alias update='yay -Syua'
+alias clean='yay -Rsn $(yay -Qtdq); rm -f ~/.xsession-errors;rm -f ~/.xsession-errors.old'
 alias upcl='update;clean'
 alias untar='tar -xvf'
 alias pingg="webstat google.com"
 alias rickroll='nc rya.nc 1987'
-alias google='google-chrome-stable'
 alias vi='vim'
-alias inst="yaourt -S --noconfirm"
+alias inst="yay -S --noconfirm"
 alias fetch='neofetch'
-alias upyolo='yaourt -Syyuua --devel --noconfirm'
+alias upyolo='yay -Syyuua --devel --noconfirm'
 alias ctop='nocorrect ctop'
-alias monitor='~/dotfiles/setMonitors.sh'
 alias cla="clear;la"
 alias pbcopy="xclip --selection clipboard"
 alias pbpaste="xclip selection clipboard -o"
@@ -68,12 +65,6 @@ alias docker-clean='docker-rma -f status=exited; docker-rmia -f dangling=true; d
 webstat() {
 	httpstat "http://"$1
 	hey -d 100 "http://"$1
-}
-
-gall() {
-	git add .
-	git commit -m $1
-	git push origin $2
 }
 
 gcomp() {
