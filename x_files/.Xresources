@@ -31,48 +31,48 @@ rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
 rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
 rofi.color-window:                   #ffffff,#f5f5f5
 rofi.separator-style:                solid
-rofi.font:                           Inconsolata 28
+rofi.font:                           Inconsolata 24
 
 ! ------------------------------------------------------------------------------
 ! urxvt
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #e6e1dc
-*.background:   #292d3e
-*.cursorColor:  #e6e1dc
+*.foreground:   #c0c5ce
+*.background:   #2b303b
+*.cursorColor:  #c0c5ce
 
 ! black
-*.color0:       #2b2b2b
-*.color8:       #9eb1e2
+*.color0:       #2b303b
+*.color8:       #65737e
 
 ! red
-*.color1:       #f07178
-*.color9:       #f07178
+*.color1:       #bf616a
+*.color9:       #bf616a
 
 ! green
-*.color2:       #c3e88d
-*.color10:      #c3e88d
+*.color2:       #a3be8c
+*.color10:      #a3be8c
 
 ! yellow
-*.color3:       #ffcb6b
-*.color11:      #ffcb6b
+*.color3:       #ebcb8b
+*.color11:      #ebcb8b
 
 ! blue
-*.color4:       #82aaff
-*.color12:      #82aaff
+*.color4:       #8fa1b3
+*.color12:      #8fa1b3
 
 ! magenta
-*.color5:       #c792ea
-*.color13:      #c792ea
+*.color5:       #b48ead
+*.color13:      #b48ead
 
 ! cyan
-*.color6:       #c3e88d
-*.color14:      #c3e88d
+*.color6:       #96b5b4
+*.color14:      #96b5b4
 
 ! white
-*.color7:       #d0d0d0
-*.color15:      #d0d0d0
+*.color7:       #c0c5ce
+*.color15:      #eff1f5
 
 
 URxvt.perl-ext-common:  default,tabbed,matcher
@@ -80,10 +80,13 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 0
 URxvt.internalBorder:      0
 URxvt.externalBorder:      0
-URxvt.font: xft:Inconsolata:size=12
+URxvt.font: xft:Inconsolata:size=14
 URxvt.scrollBar: false
 URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 urxvt*depth: 32
 !urxvt*background: [85]#111111

@@ -44,8 +44,9 @@ alias fetch='neofetch'
 alias upyolo='yay -Syyuua --devel --noconfirm'
 alias ctop='nocorrect ctop'
 alias cla="clear;la"
-alias pbcopy="xclip --selection clipboard"
-alias pbpaste="xclip selection clipboard -o"
+
+# Spark
+ export PATH="$PATH:/opt/apache-spark/bin"
 
 # Remove all docker containers running and exited
 alias docker-rma='__drma() { docker ps -aq "$@" | xargs -r docker rm -f; }; __drma'
@@ -77,3 +78,10 @@ export PATH=$PATH:$GOPATH/bin
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+xrdb ~/.Xresources
+
+[ -f ~/dotfiles/credentials.sh ] && source ~/dotfiles/credentials.sh
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

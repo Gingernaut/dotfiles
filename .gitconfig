@@ -52,7 +52,7 @@
     tags = tag -l
 
     # Start a new local repository and perform initial commit
-    this = !git init && git add . && git commmit -m \"Initial commit.\"
+    this = !git init && git add . && git commit -m \"Initial commit.\"
 
     # Thin out older metadata within the repository, reduceses filesystem footprint
     trim = !git reflog expire --expire=now --all && git gc --prune=now

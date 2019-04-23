@@ -1,6 +1,8 @@
 #!/bin/zsh
 set -x
 
+printf "setting up AUR system \n \n"
+
 rm -f ~/.zshrc
 
 printf "prezto setup \n \n"
@@ -51,6 +53,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 go get -u github.com/davecheney/httpstat
 go get -u github.com/rakyll/hey
+go get -u github.com/tuneinc/fasts3
 
 printf "installing user packages"
 yay -S --noconfirm spotify qbittorrent slack-desktop

@@ -13,7 +13,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
+    xrdb $sysresources
 fi
 
 if [ -f $sysmodmap ]; then
