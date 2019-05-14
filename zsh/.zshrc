@@ -1,6 +1,6 @@
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 bindkey -v
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
@@ -32,8 +32,14 @@ alias cla="clear;la"
 alias pullall='~/dotfiles/pullAll.sh'
 alias update='brew update;pullall'
 alias cat='bat'
+alias s3='fasts3'
+
+alias ass='SBT_OPTS="-Xmx3G" sbt "set test in assembly := {}" assembly'
+
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 
-[ -f ~/dotfiles/zsh/.worksettings ] && source ~/dotfiles/zsh/.worksettings
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+[ -f ~/dotfiles/zsh/.worksettings.sh ] && source ~/dotfiles/zsh/.worksettings.sh

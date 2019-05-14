@@ -1,31 +1,44 @@
-# Monolith
-cd ~/Code/monolith/core; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/monolith/360; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/monolith/brands; git pull origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/monolith/language; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
+print_dir() {
+  echo "\n---------------------"
+  pwd
+  echo "---------------------\n \n"
+}
 
-# Streaming
-cd ~/Code/streaming/ap-stream; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/streaming/ap-stream-lib; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/streaming/ap-stream-ingress; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/streaming/ap-stream-egress; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/streaming/gobs-config; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/streaming/rule-service-api; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
+#### Batch
+# develop
+cd ~/Code/batch/emr-scheduler; print_dir; git pull origin develop;
+cd ~/Code/batch/authoritative-records-store; print_dir; git pull origin develop;
+# master
+cd ~/Code/batch/ars-api; print_dir; git pull origin master;
+cd ~/Code/batch/datalake-egress-api; print_dir; git pull origin master;
+cd ~/Code/batch/datalake-egress-processor; print_dir; git pull origin master;
+cd ~/Code/batch/datalake-egress-shared; print_dir; git pull origin master;
+cd ~/Code/batch/iqdp-progress-service;print_dir; git pull origin master;
+cd ~/Code/batch/qproto-tools; print_dir; git pull origin master;
+cd ~/Code/batch/config-utils; print_dir; git pull origin master;
+cd ~/Code/batch/shared-qamelfiles; print_dir; git pull origin master;
 
-# Batch
-cd ~/Code/batch/emr-scheduler; git pull --rebase origin develop; pwd; echo "\n --------------------- \n";
-cd ~/Code/batch/authoritative-records-store; git pull --rebase origin develop; pwd; echo "\n --------------------- \n";
 
 # Realtime
-cd ~/Code/realtime/API; git pull --rebase origin feature/AE-2368; pwd; echo "\n --------------------- \n";
-cd ~/Code/realtime/ae-ingestion-spark; git pull --rebase origin develop; pwd; echo "\n --------------------- \n";
-cd ~/Code/realtime/data-platform-tests; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
+cd ~/Code/realtime/API; print_dir; git pull origin develop; print_dir;
+cd ~/Code/realtime/ae-ingestion-spark; print_dir; git pull origin develop;
+cd ~/Code/realtime/data-platform-tests; print_dir; git pull origin master;
 
-# Text
-cd ~/Code/textIQ/text-engine; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/textIQ/text-tools-permissions; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
+# Analytics Platform
+cd ~/Code/analytics-platform/ae-common; print_dir; git pull origin master;
+cd ~/Code/analytics-platform/aeConfigToConsul; print_dir; git pull origin master;
+cd ~/Code/analytics-platform/docker-images; print_dir; git pull origin master;
+cd ~/Code/analytics-platform/data-pipeline-docker; print_dir; git pull origin master;
+cd ~/Code/analytics-platform/spark-cluster-docker; print_dir; git pull origin master;
+
+# Nomad
+cd ~/Code/nomad/qamel-driver; print_dir; git pull origin master;
+cd ~/Code/nomad/nomad-spark-base; print_dir; git pull origin master;
+cd ~/Code/nomad/nomad-app-base; print_dir; git pull origin master;
+cd ~/Code/nomad/spark-sidecar; print_dir; git pull origin master;
 
 # General
-cd ~/Code/docker-images; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Code/hiera; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
-cd ~/Documents/aqqountant; git pull --rebase origin master; pwd; echo "\n --------------------- \n";
+cd ~/Code/hiera; print_dir; git pull origin master;
+cd ~/Code/vault; print_dir; git pull origin master;
+cd ~/Code/vault-govcloud; print_dir; git pull origin master;
+cd ~/Documents/aqqountant; print_dir; git pull origin master;
