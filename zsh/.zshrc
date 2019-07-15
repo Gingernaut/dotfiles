@@ -31,11 +31,8 @@ alias ctop='nocorrect ctop'
 alias cla="clear;la"
 alias pullall='~/dotfiles/pullAll.sh'
 alias update='brew update;pullall'
-alias cat='bat'
 alias s3='fasts3'
-
 alias ass='SBT_OPTS="-Xmx3G" sbt "set test in assembly := {}" assembly'
-
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
