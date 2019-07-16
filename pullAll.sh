@@ -13,23 +13,21 @@ cd ~/Code/batch/ars-api; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-api; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-processor; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-shared; print_dir; git pull origin master;
-cd ~/Code/batch/iqdp-progress-service;print_dir; git pull origin master;
 cd ~/Code/batch/qproto-tools; print_dir; git pull origin master;
 cd ~/Code/batch/config-utils; print_dir; git pull origin master;
 cd ~/Code/batch/shared-qamelfiles; print_dir; git pull origin master;
 
+cd ~/Code/batch/iq-data-platform-gateway; print_dir; git pull origin master;
 
-# Realtime
-cd ~/Code/realtime/API; print_dir; git pull origin develop; print_dir;
-cd ~/Code/realtime/ae-ingestion-spark; print_dir; git pull origin develop;
-cd ~/Code/realtime/data-platform-tests; print_dir; git pull origin master;
+cd ~/Code/batch/iq-progress-service;print_dir; git pull origin master;
+cd ~/Code/batch/iq-spark-scheduler; print_dir; git pull origin master;
 
-# Analytics Platform
-cd ~/Code/analytics-platform/ae-common; print_dir; git pull origin master;
-cd ~/Code/analytics-platform/aeConfigToConsul; print_dir; git pull origin master;
-cd ~/Code/analytics-platform/docker-images; print_dir; git pull origin master;
-cd ~/Code/analytics-platform/data-pipeline-docker; print_dir; git pull origin master;
-cd ~/Code/analytics-platform/spark-cluster-docker; print_dir; git pull origin master;
+cd ~/Code/batch/spark-2.4; print_dir; git pull origin master;
+
+cd ~/Code/batch/snapshot-reencryption; print_dir; git pull origin master;
+cd ~/Code/batch/snapshot-deletion-script; print_dir; git pull origin master;
+cd ~/Code/batch/export-deletion-script; print_dir; git pull origin master;
+cd ~/Code/batch/lake-patrol; print_dir; git pull origin master;
 
 # Nomad
 cd ~/Code/nomad/qamel-driver; print_dir; git pull origin master;

@@ -39,4 +39,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-[ -f ~/dotfiles/zsh/.worksettings.sh ] && source ~/dotfiles/zsh/.worksettings.sh
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+[ -f ~/dotfiles/.worksettings.sh ] && source ~/dotfiles/.worksettings.sh
