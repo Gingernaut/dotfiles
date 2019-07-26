@@ -33,12 +33,16 @@ alias pullall='~/dotfiles/pullAll.sh'
 alias update='brew update;pullall'
 alias s3='fasts3'
 alias ass='SBT_OPTS="-Xmx3G" sbt "set test in assembly := {}" assembly'
+alias gitshit='open https://ohshitgit.com/'
 
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/Users/tpeterson/Library/Python/3.7/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 [ -f ~/dotfiles/.worksettings.sh ] && source ~/dotfiles/.worksettings.sh
+[ -f ~/dotfiles/tunnel.sh ] && source ~/dotfiles/tunnel.sh
+

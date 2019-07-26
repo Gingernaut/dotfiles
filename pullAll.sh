@@ -13,9 +13,10 @@ cd ~/Code/batch/ars-api; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-api; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-processor; print_dir; git pull origin master;
 cd ~/Code/batch/datalake-egress-shared; print_dir; git pull origin master;
-cd ~/Code/batch/qproto-tools; print_dir; git pull origin master;
 cd ~/Code/batch/config-utils; print_dir; git pull origin master;
 cd ~/Code/batch/shared-qamelfiles; print_dir; git pull origin master;
+cd ~/Code/batch/ars-stream-ingestion; print_dir; git pull origin master;
+cd ~/Code/batch/fieldsets_ingress;print_dir; git pull origin master;
 
 cd ~/Code/batch/iq-data-platform-gateway; print_dir; git pull origin master;
 
