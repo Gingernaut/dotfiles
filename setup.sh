@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -x
 
-rm -rf ~/.z&
+rm -rf ~/.z*
 
 sudo apt-get update -y && sudo apt-get upgrade -y
 
