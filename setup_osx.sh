@@ -114,7 +114,7 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew update
-brew cask install adoptopenjdk
+brew tap AdoptOpenJDK/openjdk
 
 brew cask install adoptopenjdk8
 brew install zsh python python3 bash moreutils findutils gnu-sed wget docker scala apache-spark nvm diff-so-fancy nmap
