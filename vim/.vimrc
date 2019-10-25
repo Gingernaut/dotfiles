@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
-Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
