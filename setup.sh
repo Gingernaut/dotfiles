@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -x
 
-printf "setting up AUR system \n \n"
+printf "setting up MacOS system \n \n"
 
 rm -f ~/.zshrc
 
@@ -36,35 +36,30 @@ sudo fc-cache -fv
 printf "--------- \n"
 printf "installing development packages \n \n"
 
-yay -S --noconfirm vim go zsh-syntax-highlighting \
-    docker docker-compose htop nvm rofi rustup valgrind \
-    code tree strace gzip unzip ctop bat neofetch xclip rofi \
+# yay -S --noconfirm vim go zsh-syntax-highlighting \
+#     docker docker-compose htop nvm rofi rustup valgrind \
+#     code tree strace gzip unzip ctop bat neofetch xclip rofi \
 
 
 # Docker
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
-sudo groupadd docker
-sudo usermod -aG docker $USER
+# sudo systemctl enable docker.service
+# sudo systemctl start docker.service
+# sudo groupadd docker
+# sudo usermod -aG docker $USER
 
 # vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-go get -u github.com/davecheney/httpstat
-go get -u github.com/rakyll/hey
-go get -u github.com/tuneinc/fasts3
+# go get -u github.com/davecheney/httpstat
+# go get -u github.com/rakyll/hey
+# go get -u github.com/tuneinc/fasts3
 
 printf "installing user packages"
-yay -S --noconfirm spotify qbittorrent slack-desktop
+# yay -S --noconfirm spotify qbittorrent slack-desktop
 
 source ~/.zshrc
 printf "-----------------------"
 printf "!! Install completed !!"
 printf "-----------------------"
-sleep 1
-
-printf "restarting system for docker group changes to take effect in 5 seconds"
-sleep 5
-reboot
 
