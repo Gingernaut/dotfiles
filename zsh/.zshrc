@@ -29,7 +29,6 @@ alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias top='htop'
 alias ifconfig='ip addr'
-alias listi='yay -Qqet'
 alias update='brew update'
 alias untar='tar -xvf'
 alias pingg="webstat google.com"
@@ -50,7 +49,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export SCALA_HOME=/usr/local/opt/scala/idea
 # source /usr/share/nvm/init-nvm.sh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 [ -f ~/dotfiles/credentials.sh ] && source ~/dotfiles/credentials.sh
@@ -58,3 +56,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export PATH=$PATH:$HOME/.pulumi/bin
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/Users/tpeterson/.local/bin:$PATH"
