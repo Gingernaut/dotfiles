@@ -66,7 +66,7 @@ brew_pkgs() {
     arch -arm64 brew install htop
     arch -arm64 brew install jq
     arch -arm64 brew install httpie 
-    arch -arm64 brew installctop 
+    arch -arm64 brew install ctop 
     arch -arm64 brew install curl
 }
 
