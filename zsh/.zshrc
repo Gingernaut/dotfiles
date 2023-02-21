@@ -143,7 +143,7 @@ alias top='htop'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias open='open -a ForkLift '
-alias update="brew update;brew upgrade;zimfw update"
+alias update="brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
 
 
 
