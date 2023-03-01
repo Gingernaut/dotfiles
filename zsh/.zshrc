@@ -129,7 +129,25 @@ for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
+####################### Additional Zim settings #######################
 
+zstyle ':zim:duration-info' threshold 2
+zstyle ':zim:duration-info' show-milliseconds yes
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec duration-info-preexec
+add-zsh-hook precmd duration-info-precmd
+
+RPS1='${duration_info}'
+
+homebrewupdates() {
+  brewu;
+  brewU;
+  caskU;
+  brewc;
+  brewa;
+  brewd;
+}
 
 ####################### History Settings #######################
 
@@ -154,13 +172,17 @@ alias top='htop'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias open='open -a ForkLift '
-alias update="brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
+alias update="homebrewupdates;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
 
 # LosslessCut cleanup
 alias cleantrimmings="find . -type f -name '*.llc' -delete;find . -type f -name '*.bin' -delete"
 
 
 ####################### Compatability settings #######################
+
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+export PATH="/usr/local/sbin:$PATH"
 
 # For compilers to find curl you may need to set:
 export LDFLAGS="-L/usr/local/opt/curl/lib"
@@ -180,3 +202,8 @@ export NVM_DIR="$HOME/.nvm"
 # Sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
