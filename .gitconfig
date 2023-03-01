@@ -1,5 +1,5 @@
 [user]
-	email = tylermpeterson36@gmail.com
+	email = tpeterson@qualtrics.com
 	name = Tyler Peterson
 
 [alias]
@@ -63,3 +63,6 @@
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
+
+[pull]
+	rebase = false

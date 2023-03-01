@@ -26,7 +26,7 @@ brew_pkgs() {
     
     # Install a modern version of Bash.
     arch -arm64 brew install bash
-    arch -arm64 brew install bash-completion2
+    arch -arm64 brew install bash-completion
 
     arch -arm64 brew install wget
 
@@ -90,16 +90,18 @@ vim_setup() {
     fi
 
 
-    # curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    #     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 }
 
 zsh_setup() {
-
-
+    ln -s "$(pwd)"/zsh/.zshrc $HOME/.zshrc
+    ln -s "$(pwd)"/zsh/zim/.zimrc $HOME/.zimrc
 }
 
-brew_pkgs "$@"
-# sdkman_setup() "$@"
+
+# brew_pkgs "$@"
+# sdkman_setup "$@"
 # vim_setup "$@"
+zsh_setup "$@"

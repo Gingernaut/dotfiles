@@ -131,8 +131,16 @@ unset key
 #!/usr/bin/env zsh
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000               	# big big history
+export HISTFILESIZE=100000           	# big big history
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 ####################### Aliases #######################
@@ -142,20 +150,34 @@ alias cla="clear;la"
 alias top='htop'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
-alias open='open -a ForkLift '
-alias update="brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
+alias update="pull_gitlab_repos;brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
+alias fasts3='/Users/tpeterson/code/utils/fasts3/fasts3'
+alias s3='fasts3'
 
 
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # For compilers to find curl you may need to set:
 export LDFLAGS="-L/usr/local/opt/curl/lib"
 export CPPFLAGS="-I/usr/local/opt/curl/include"
 
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="$CPPFLAGS -I /opt/homebrew/opt/openssl@3/include"
+
+export LIBRARY_PATH=/opt/homebrew/Cellar/librdkafka/2.0.2/lib
+export C_INCLUDE_PATH=/opt/homebrew/Cellar/librdkafka/2.0.2/include 
 # For pkg-config to find curl you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
 
+export PATH="/Users/tpeterson/.local/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
+
+source ~/dotfiles/credentials.sh
+source ~/dotfiles/work_scripts.sh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -165,3 +187,4 @@ export NVM_DIR="$HOME/.nvm"
 # Sdkman
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
