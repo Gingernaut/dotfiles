@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -128,11 +130,20 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-#!/usr/bin/env zsh
+
+####################### History Settings #######################
 
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTCONTROL=ignoredups:erasedups # no duplicate entries
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# appends every command to the history file once it's executed
+
+setopt inc_append_history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 ####################### Aliases #######################
@@ -145,7 +156,11 @@ alias vrc='vim ~/.zshrc'
 alias open='open -a ForkLift '
 alias update="brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
 
+# LosslessCut cleanup
+alias cleantrimmings="find . -type f -name '*.llc' -delete;find . -type f -name '*.bin' -delete"
 
+
+####################### Compatability settings #######################
 
 # For compilers to find curl you may need to set:
 export LDFLAGS="-L/usr/local/opt/curl/lib"
@@ -154,7 +169,7 @@ export CPPFLAGS="-I/usr/local/opt/curl/include"
 # For pkg-config to find curl you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
-
+###################### Utility tool homes #######################
 
 
 # nvm
