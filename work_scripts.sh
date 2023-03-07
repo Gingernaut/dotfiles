@@ -24,18 +24,21 @@ pull_gitlab_repos() {
     cd ~/code/qdl/docker-images/ && echo "Updating $(pwd)" && git pull origin master;
     cd ~/code/qdl/iq-data-platform-gateway/ && echo "Updating $(pwd)" && git pull origin master;
     cd ~/code/qdl/shared-qamelfiles/ && echo "Updating $(pwd)" && git pull origin master;
+    cd ~/code/qdl/test-harness/ && echo "Updating $(pwd)" && git pull origin master;
 
     
     # company projects
     cd ~/code/global/qamel-driver && echo "Updating $(pwd)" && git pull origin master;
-    
+    cd ~/code/global/auto-patched-images-registry && echo "Updating $(pwd)" && git pull origin main;
+    cd ~/code/global/vault && echo "Updating $(pwd)" && git pull origin master;
+    cd ~/code/global/vault-govcloud && echo "Updating $(pwd)" && git pull origin master;
+    cd ~/code/global/hiera && echo "Updating $(pwd)" && git pull origin master;
+    cd ~/code/global/jwt-curl && echo "Updating $(pwd)" && git pull origin master;
 
     cd $TMP
 }
 
-dlogs() {
-    docker ps | grep $1 | awk '{if(NR>0)print}' | awk '{ print $1 }' | read CTNR_ID; docker logs --follow $CTNR_ID
-}
+
 
 regions () {
 	echo """
@@ -56,3 +59,47 @@ regions () {
     gov1      us-gov-west-1    $(TZ=America/Los_Angeles \date "+%Y-%m-%d %H:%M")
     """
 }
+
+function sanity_check() {
+    function run_request () {
+        local dc=$1
+        local brand=$2
+        local fsid=$3
+        local token=$4
+        if [ -z $5 ]
+        then
+            local fail=""
+        else
+            local fail="--fail"
+        fi
+
+        local BODY='{"table":{"name":"'$fsid'"},"metrics":[{"metric":"count","field":"_recordId","key":"count"}]}'
+        ssh $DC  "curl $fail --silent -H'X-JWT: $token' -H 'Content-Type: application/json' --data '$BODY' iq-data-platform.service.consul:9000/datalake-egress-api/v2/query"
+    }
+
+    echo "b1-prv 0d72581cbb7f4f29b257fd2a qb1prv
+    g1-iad 2face0722ce54b96b317822c qg1iad
+    lhr1 9c4b0255f482400f8e4b1ae7 qcorp
+    iad1 ff26a80ffa444b4e82d0b823 qus1
+    sjc1 0c28018f33464df285425fac qaz1
+    syd1 1abb5c0b0315423ba9093bad qasia
+    fra1 442dc7088677407bb7b45196 qeurope" | grep ${1:-".*"} | while read dc fsid brand
+    do
+        DC=$(echo "$dc" | sed -e 's/b1-prv/b1/' -e 's/g1-iad/g1/')
+        JWT_SHOW_TOKEN=1 JWT_AUD=qualtrics JWT_BRAND_ID=$brand jwt_curl | while read token
+        do 
+            echo -n "dc=$(printf %-6s $dc) fieldset_id=$fsid brand=$(printf %-7s $brand) status="
+            run_request $DC $brand $fsid $token 0 >/dev/null
+            if [ $? -eq 0 ]
+            then
+                echo "SUCCESS"
+            else
+                echo "FAILED response=$(run_request $DC $brand $fsid $token)"
+            fi
+        done
+    done
+
+}
+
+
+

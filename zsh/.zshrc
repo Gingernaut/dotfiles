@@ -128,19 +128,67 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-#!/usr/bin/env zsh
+####################### Additional Zim settings #######################
+
+# setopt nopromptbang prompt{cr,percent,sp,subst}
+
+zstyle ':zim:duration-info' threshold 2
+zstyle ':zim:duration-info' show-milliseconds yes
+
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec duration-info-preexec
+add-zsh-hook precmd duration-info-precmd
+
+RPS1='${duration_info}'
+
+# uses zimfw plugin
+# https://github.com/zimfw/homebrew
+
+homebrewupdates() {
+  brewu;
+  brewU;
+  caskU;
+  brewc;
+  brewa;
+  brewd;
+}
+
+####################### History control #######################
+
 
 HISTFILE=~/.histfile
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
-export HISTSIZE=100000               	# big big history
-export HISTFILESIZE=100000           	# big big history
+export HISTSIZE=2000000 # big big history
+export HISTFILESIZE=2000000 # big big history
+
+export SAVEHIST=$HISTSIZE
+
+# HISTORY
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt INC_APPEND_HISTORY        # Appends every command to the history file once it is executed
+
+# END HISTORY
+
 
 # Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# Appends every command to the history file once it is executed
-setopt inc_append_history
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+export FZF_COMPLETION_DIR_COMMANDS="cd rmdir tree"
 
 
 ####################### Aliases #######################
@@ -150,9 +198,67 @@ alias cla="clear;la"
 alias top='htop'
 alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
-alias update="pull_gitlab_repos;brew update;brew upgrade;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
+alias update="pull_gitlab_repos;homebrewupdates;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
 alias fasts3='/Users/tpeterson/code/utils/fasts3/fasts3'
 alias s3='fasts3'
+alias dstop='docker stop $(docker ps -q)'
+alias gpom='git pull origin master'
+alias cat='bat --paging=never --style=plain'
+alias sbtdeps='sbt ";dependencyUpdates; reload plugins; dependencyUpdates"'
+alias gitsha='git rev-parse --short HEAD | cut -c 1-7 | pbcopy'
+
+# https://github.com/sharkdp/bat#installation
+
+pawk () {
+    awk "{ print \$$@ }"
+}
+
+dlogs() {
+    docker ps | grep $1 | awk '{if(NR>0)print}' | awk '{ print $1 }' | read CTNR_ID; docker logs --follow $CTNR_ID
+}
+dexec() {
+    docker ps | grep $1 | awk '{if(NR>0)print}' | awk '{ print $1 }' | read CTNR_ID; docker exec -it $CTNR_ID bash
+}
+
+pyclean () {
+  rm -rf .pytest_cache;
+  find . -type f -name "*.py[co]" -delete;
+  find . -type d -name "__pycache__" -delete;
+}
+
+nvenv () {
+  if [[ "$VIRTUAL_ENV" != "" ]]
+  then
+    deactivate;
+  fi
+  pyclean;
+  if [ -d "$(pwd)/.venv" ]
+  then 
+      echo "removing current .venv"
+      rm -rf .venv;
+  fi;
+  python3 -m venv .venv;
+  source .venv/bin/activate;
+  
+
+  if [ -e pyproject.toml ]; then
+    if grep -q "poetry-core" pyproject.toml; then
+      echo "installing poetry dependencies";
+        poetry install;
+    elif grep -q "pdm" pyproject.toml; then
+      echo "Installing pdm dependencies";
+      pdm install;
+    fi
+  elif [ -e requirements.txt ]; then
+    echo "installing requirements.txt";
+    pip3 install -r requirements.txt;
+  elif [ -e requirements.txt ]; then
+    echo "installing requirements.txt";
+    pip3 install -r requirements.txt;
+  fi
+
+}
+####################### System settings #######################
 
 
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -170,14 +276,11 @@ export C_INCLUDE_PATH=/opt/homebrew/Cellar/librdkafka/2.0.2/include
 export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
 
-export PATH="/Users/tpeterson/.local/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
+####################### Tooling setup #######################
 
 source ~/dotfiles/credentials.sh
 source ~/dotfiles/work_scripts.sh
+
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -188,3 +291,11 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# pyenv
+export PATH="/Users/tpeterson/.local/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# zoxide
+eval "$(zoxide init zsh)"
