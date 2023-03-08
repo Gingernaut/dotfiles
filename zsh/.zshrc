@@ -163,6 +163,11 @@ setopt inc_append_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Preview file content using bat (https://github.com/sharkdp/bat)
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
 
 ####################### Aliases #######################
 alias ll='ls -lh'
@@ -173,10 +178,59 @@ alias vvc='vim ~/.vimrc'
 alias vrc='vim ~/.zshrc'
 alias open='open -a ForkLift '
 alias update="homebrewupdates;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
+alias dstop='docker stop $(ps -q)'
+alias cat='bat --paging=never --style=plain'
+alias githa='git rev-parse --short HEAD | cut -c 1-7 | pbcopy'
 
 # LosslessCut cleanup
 alias cleantrimmings="find . -type f -name '*.llc' -delete;find . -type f -name '*.bin' -delete"
 
+# credential sourcing
+[ -f ~/dotfiles/credentials.sh ] && source ~/dotfiles/credentials.sh
+
+
+pawk () {
+  awk "{print \$$@ }"
+}
+
+pyclean () {
+  rm -rf .pytest_cache;
+  find . -type f -name "*.py[co]" -delete;
+  find . -type d -name "__pycache__" -delete;
+}
+
+nvenv () {
+  if [[ "$VIRTUAL_ENV" != "" ]]
+  then
+    deactivate;
+  fi
+  pyclean;
+  if [ -d "$(pwd)/.venv" ]
+  then 
+      echo "removing current .venv"
+      rm -rf .venv;
+  fi;
+  python3 -m venv .venv;
+  source .venv/bin/activate;
+  
+
+  if [ -e pyproject.toml ]; then
+    if grep -q "poetry-core" pyproject.toml; then
+      echo "installing poetry dependencies";
+        poetry install;
+    elif grep -q "pdm" pyproject.toml; then
+      echo "Installing pdm dependencies";
+      pdm install;
+    fi
+  elif [ -e requirements.txt ]; then
+    echo "installing requirements.txt";
+    pip3 install -r requirements.txt;
+  elif [ -e requirements.txt ]; then
+    echo "installing requirements.txt";
+    pip3 install -r requirements.txt;
+  fi
+
+}
 
 ####################### Compatability settings #######################
 
@@ -207,3 +261,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# poetry 
+export PATH="/Users/tpeterson/.local/bin:$PATH"
+
+
+# zoxide
+
+eval "$(zoxide init zsh)"
