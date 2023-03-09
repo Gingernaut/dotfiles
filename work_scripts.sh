@@ -35,6 +35,9 @@ pull_gitlab_repos() {
     cd ~/code/global/hiera && echo "Updating $(pwd)" && git pull origin master;
     cd ~/code/global/jwt-curl && echo "Updating $(pwd)" && git pull origin master;
 
+    # tooling
+    cd ~/cli-ai/ && echo "Updating $(pwd)" && git pull origin main && zsh ./run_build.zsh;
+
     cd $TMP
 }
 
