@@ -196,7 +196,7 @@ alias open='open -a ForkLift '
 alias update="homebrewupdates;zimfw update;vim +PlugUpdate +qall;softwareupdate -l;"
 alias dstop='docker stop $(ps -q)'
 alias cat='bat --paging=never --style=plain'
-alias githa='git rev-parse --short HEAD | cut -c 1-7 | pbcopy'
+alias gitsha='git rev-parse --short HEAD | cut -c 1-7 | pbcopy'
 
 # LosslessCut cleanup
 alias cleantrimmings="find . -type f -name '*.llc' -delete;find . -type f -name '*.bin' -delete"
