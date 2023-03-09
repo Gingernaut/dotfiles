@@ -151,22 +151,38 @@ homebrewupdates() {
 
 ####################### History Settings #######################
 
+
 HISTFILE=~/.histfile
-export HISTCONTROL=ignoredups:erasedups # no duplicate entries
-export HISTSIZE=1000000
-export HISTFILESIZE=1000000
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=2000000 # big big history
+export HISTFILESIZE=2000000 # big big history
 
+export SAVEHIST=$HISTSIZE
+
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt INC_APPEND_HISTORY        # Appends every command to the history file once it is executed
+
+
+# Save and reload the history after each command finishes
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-# appends every command to the history file once it's executed
 
-setopt inc_append_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Preview file content using bat (https://github.com/sharkdp/bat)
+# fzf
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+export FZF_COMPLETION_DIR_COMMANDS="cd rmdir tree"
+
 
 
 ####################### Aliases #######################
@@ -188,6 +204,7 @@ alias cleantrimmings="find . -type f -name '*.llc' -delete;find . -type f -name 
 # credential sourcing
 [ -f ~/dotfiles/credentials.sh ] && source ~/dotfiles/credentials.sh
 
+####################### Helper functions #######################
 
 pawk () {
   awk "{print \$$@ }"
@@ -225,11 +242,7 @@ nvenv () {
   elif [ -e requirements.txt ]; then
     echo "installing requirements.txt";
     pip3 install -r requirements.txt;
-  elif [ -e requirements.txt ]; then
-    echo "installing requirements.txt";
-    pip3 install -r requirements.txt;
   fi
-
 }
 
 ####################### Compatability settings #######################
@@ -258,12 +271,13 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # pyenv
+# poetry 
+export PATH="/Users/tpeterson/.local/bin:$PATH"
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# poetry 
-export PATH="/Users/tpeterson/.local/bin:$PATH"
 
 
 # zoxide
